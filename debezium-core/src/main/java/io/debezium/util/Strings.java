@@ -1050,7 +1050,20 @@ public final class Strings {
 
         return null;
     }
+    private static Character deriveQuotingChar(String identifierPart) {
+        char first = identifierPart.charAt(0);
+        char last = identifierPart.charAt(identifierPart.length() - 1);
 
+        if (first == last && (first == '"' || first == '\'' || first == '`')) {
+            return first;
+        }
+            private static Character deriveQuotingChar(String identifierPart) {
+        char first = identifierPart.charAt(0);
+        char last = identifierPart.charAt(identifierPart.length() - 1);
+
+        if (first == last && (first == '"' || first == '\'' || first == '`')) {
+            return first;
+        }
     private Strings() {
     }
 
